@@ -1,0 +1,37 @@
+<div class="container-fluid d-flex flex-column px-5">
+    <div class="table-title my-3 d-flex justify-content-between py-3">
+        <h2>Gérer les employés</h2>
+        <button class="btn bg-success text-white" (click)="add()">
+            <i class="fa-solid fa-plus"></i> NEW
+        </button>
+    </div>
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>NUMÉRO</th>
+                <th>DATE COMMANDE</th>
+                <th>DATE LIVRAISON VOULUE</th>
+                <th>DATE LIVRAISON</th>
+                <th>CLIENT</th>
+                <th>VENDEUR</th>
+                <th>MAGASIN</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let commande of objects">
+                <td>{{commande.numero}}</td>
+                <td>{{commande.dateCommande}}</td>
+                <td>{{commande.dateLivraisonVoulue }}</td>
+                <td>{{commande.dateLivraison}}</td>
+                <td>{{commande.clientId?.nom}}</td>
+                <td>{{commande.vendeurId?.nom}}</td>
+                <td>{{commande.magasinId?.nom}}</td>
+                <td>
+                    <a href="#" [routerLink]="['/commande/edit/', commande.numero]" class="btn"><i class='fas fa-edit edit'></i></a>
+                    <button type="button" (click)="deleteConfirmation(commande.nunero)" class="btn text-danger"><i class="fa-solid fa-trash-can"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

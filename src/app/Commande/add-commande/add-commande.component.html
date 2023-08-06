@@ -1,0 +1,49 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <form #magasinForm="ngForm" class="col-5">
+        <h1>Ajouter une commande...</h1>
+        <div class="from-group my-2">
+            <label>Numéro</label>
+            <input type="text" class="form-control py-2 bg-light" placeholder="Nom du magasin..." required [(ngModel)]="entityForm.numero" name="nom" #nom="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Date Commande</label>
+            <input type="datetime-local" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.dateCommande" name="dateCommande" #dateCommande="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Date Livraison Voulue</label>
+            <input type="datetime-local" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.dateLivraisonVoulue" name="dateLivraisonVoulue" #dateLivraisonVoulue="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Date Livraison</label>
+            <input type="datetime-local" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.dateLivraison" name="dateLivraison" #dateLivraison="ngModel"/>
+        </div>
+        <div class="from-group my-2 d-flex flex-column">
+            <label>Magasin</label>
+            <select required class="form-select bg-light py-2" #magasin (change)="onChangeMagasin(magasin.value)">
+                <option disabled selected>Magasin</option>
+                <option *ngFor="let magasin of magasins" name="magasin" [value]="magasin.id" [selected]="magasin.id == entityForm.magasinId?.id">
+                  {{magasin.nom}}
+                </option>
+            </select>
+        </div>
+        <div class="from-group my-2 d-flex flex-column">
+            <label>Client</label>
+            <select required class="form-select bg-light py-2" #client (change)="onChangeClient(client.value)">
+                <option disabled selected>Client</option>
+                <option *ngFor="let client of clients" name="client" [value]="client.id" [selected]="client.id == entityForm.clientId?.id">
+                  {{client.prenom}} {{client.nom}}
+                </option>
+            </select>
+        </div>
+        <div class="from-group my-2 d-flex flex-column">
+            <label>Vendeur</label>
+            <select required class="form-select bg-light py-2" #vendeur (change)="onChangeVendeur(vendeur.value)">
+                <option disabled selected>Vendeur</option>
+                <option *ngFor="let vendeur of vendeurs" name="vendeur" [value]="vendeur.id" [selected]="vendeur.id == entityForm.vendeurId?.id">
+                  {{vendeur.prenom}} {{vendeur.nom}}
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-success py-3 w-100 mt-3" (click)="PutEntity(magasinForm.form.valid)">Ajouter</button>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <form #magasinForm="ngForm" class="col-5">
+        <h1>Ajouter un magasin...</h1>
+        <div class="from-group my-3">
+            <label>Nom</label>
+            <input type="text" class="form-control py-2 bg-light" placeholder="Nom du magasin..." required [(ngModel)]="entityForm.nom" name="nom" #nom="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Etat</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.etat" name="etat" #etat="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Code Zip</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.codeZip" name="codeZip" #codeZip="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Adresse</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.adresse" name="adresse" #adresse="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Ville</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.ville" name="ville" #ville="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Téléphone</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.telephone" name="telephone" #telephone="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Email</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.email" name="email" #email="ngModel"/>
+        </div>
+        <button class="btn btn-success py-3 w-100 mt-3" (click)="PutEntity(magasinForm.form.valid)">Ajouter</button>
+    </form>
+</div>

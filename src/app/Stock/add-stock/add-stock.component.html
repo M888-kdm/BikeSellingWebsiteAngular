@@ -1,0 +1,28 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <form #stockForm="ngForm" class="col-5">
+        <h1>Ajouter un Stock de produit...</h1>
+        <div class="from-group my-3">
+            <label>Quantité</label>
+            <input type="number" class="form-control py-3 bg-light" required [(ngModel)]="entityForm.quantite" name="quantite" #quantite="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Produit</label>
+            <select class="form-select py-3 bg-light" #produit required (change)="onChangeProduct(produit.value)">
+                <option disabled selected>Produit</option>
+                <option *ngFor="let product of products" name="produit" [value]="product.id" [selected]="product.id == entityForm.produit.id">
+                  {{product.nom}}
+                </option>
+            </select>
+        </div>
+        <div class="from-group my-3">
+            <label>Magasin</label>
+            <select class="form-select py-3 bg-light" #magasin required (change)="onChangeMagasin(magasin.value)">
+                <option disabled selected>Magasin</option>
+                <option *ngFor="let magasin of magasins" name="magasin" [value]="magasin.id" [selected]="magasin.id == entityForm.magasin.id">
+                  {{magasin.nom}}
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-success py-3 w-100 mt-3" (click)="PutEntity(stockForm.form.valid)">Ajouter</button>
+    </form>
+</div>

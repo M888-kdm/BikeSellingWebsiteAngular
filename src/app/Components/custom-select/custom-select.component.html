@@ -1,0 +1,3 @@
+<select class="form-select py-3 bg-light" required [(ngModel)]="selectedValue">
+    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+</select>

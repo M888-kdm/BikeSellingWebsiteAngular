@@ -1,0 +1,10 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <form #marqueForm="ngForm" class="col-5">
+        <h1>Modifier une marque...</h1>
+        <div class="from-group my-3">
+            <label>Nom</label>
+            <input type="text" class="form-control py-3 bg-light" placeholder="Nom de la marque..." required [(ngModel)]="editMarqueForm.nom" name="nom" #nom="ngModel"/>
+        </div>
+        <button class="btn btn-success py-3 w-100 mt-3" (click)="EditMarque(marqueForm.form.valid)">Ajouter</button>
+    </form>
+</div>

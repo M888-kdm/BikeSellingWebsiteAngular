@@ -1,0 +1,52 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <form #magasinForm="ngForm" class="col-5">
+        <h1>Ajouter un employé...</h1>
+        <div class="from-group my-2">
+            <label>Nom</label>
+            <input type="text" class="form-control py-2 bg-light" placeholder="Nom du magasin..." required [(ngModel)]="entityForm.nom" name="nom" #nom="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Etat</label>
+            <input type="text" class="form-control py-2 bg-light" [(ngModel)]="entityForm.etat" name="etat" #etat="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Code Zip</label>
+            <input type="text" class="form-control py-2 bg-light" [(ngModel)]="entityForm.codeZip" name="codeZip" #codeZip="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Adresse</label>
+            <input type="text" class="form-control py-2 bg-light" [(ngModel)]="entityForm.adresse" name="adresse" #adresse="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Ville</label>
+            <input type="text" class="form-control py-2 bg-light" [(ngModel)]="entityForm.ville" name="ville" #ville="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Téléphone</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.telephone" name="telephone" #telephone="ngModel"/>
+        </div>
+        <div class="from-group my-2">
+            <label>Email</label>
+            <input type="text" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.email" name="email" #email="ngModel"/>
+        </div>
+        <div class="from-group my-2 d-flex flex-column">
+            <label>Magasin</label>
+            <select required class="form-select bg-light py-2" #magasin (change)="onChangeMagasin(magasin.value)">
+                <option [disabled]="true">Magasin</option>
+                <option *ngFor="let magasin of magasins" name="magasin" [value]="magasin.id" [selected]="magasin.id == entityForm.magasin.id">
+                  {{magasin.nom}}
+                </option>
+            </select>
+        </div>
+        <div class="from-group my-2 d-flex flex-column">
+            <label>Manager</label>
+            <select required class="form-select bg-light py-2" #manager (change)="onChangeManager(manager.value)">
+                <option [disabled]="true">Manager</option>
+                <option *ngFor="let manager of managers" name="manager" [value]="manager.id" [selected]="manager.id == entityForm.manager.id">
+                  {{manager.prenom}} {{manager.nom}}
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-success py-3 w-100 mt-3" (click)="PutEntity(magasinForm.form.valid)">Ajouter</button>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<custom-container>
+    <form #articleCommandeForm="ngForm" class="col-5">
+        <h1>Ajouter un article...</h1>
+        <div class="from-group my-3">
+            <label>Quantité</label>
+            <input type="number" class="form-control py-3 bg-light" required [(ngModel)]="entityForm.quantite" name="quantite" #quantite="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Prix Départ</label>
+            <input type="number" class="form-control py-3 bg-light" required [(ngModel)]="entityForm.prixDepart" name="prixDepart" #prixDepart="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Remise</label>
+            <input type="number" class="form-control py-3 bg-light" required [(ngModel)]="entityForm.remise" name="remise" #remise="ngModel"/>
+        </div>
+        <div class="from-group my-3">
+            <label>Produit</label>
+            <select class="form-select py-3 bg-light" required #produit (change)="onChangeProduct(produit.value)">
+                <option disabled selected>Produit...</option>
+                <option *ngFor="let product of produits" name="produit" [value]="product.id" [selected]="product.id == entityForm.produit.id">
+                  {{product.nom}}
+                </option>
+            </select>
+        </div>
+        <div class="from-group my-3">
+            <label>Commande</label>
+            <select class="form-select py-3 bg-light" required #commande (change)="onChangeCommande(commande.value)">
+                <option disabled selected>Numéro de la commande</option>
+                <option *ngFor="let commande of commandes" name="produit" [value]="commande.numero" [selected]="commande.numero == entityForm.commande.numero">
+                  {{commande.numero}}
+                </option>
+            </select>
+        </div>
+        <validate-button (click)="PutEntity(articleCommandeForm.form.valid)">Ajouter</validate-button>
+    </form>
+</custom-container>
