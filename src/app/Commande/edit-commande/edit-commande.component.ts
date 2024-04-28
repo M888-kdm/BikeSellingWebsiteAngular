@@ -21,7 +21,6 @@ export class EditCommandeComponent extends AddCommandeComponent implements OnIni
 
   override ngOnInit(): void {
     this.entityId = this.route.snapshot.params['commandeId'];
-    console.log(this.entityId);
     this.initializeData();
     this.getById();
   }

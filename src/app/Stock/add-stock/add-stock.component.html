@@ -9,7 +9,7 @@
             <label>Produit</label>
             <select class="form-select py-3 bg-light" #produit required (change)="onChangeProduct(produit.value)">
                 <option disabled selected>Produit</option>
-                <option *ngFor="let product of products" name="produit" [value]="product.id" [selected]="product.id == entityForm.produit.id">
+                <option *ngFor="let product of products" name="produit" [value]="product.id" [selected]="produit.id == entityForm.produit.id">
                   {{product.nom}}
                 </option>
             </select>

@@ -41,13 +41,13 @@ export class AddComponent extends AddEntityComponent {
   }
 
   onChangeMarque(value: any) {
-    this.entityForm.magasin = {
+    this.entityForm.marque = {
       id: value
     }
   }
 
   onChangeCategorie(value: any) {
-    this.entityForm.manager = {
+    this.entityForm.categorie = {
       id: value
     }
   }

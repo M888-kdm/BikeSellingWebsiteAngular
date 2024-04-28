@@ -21,6 +21,8 @@ export class ViewMarqueComponent extends ViewEntityComponent implements OnInit {
     this.columns = ["ID", "NOM"];
     this.fields = [getId, getNom];
     this.editPath = "/marque/edit/";
+    this.entityUrl = "marque";
+    this.name = "marques"
   }
 
 }

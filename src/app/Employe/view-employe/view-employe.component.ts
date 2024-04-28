@@ -19,6 +19,8 @@ export class ViewEmployeComponent extends ViewEntityComponent implements OnInit 
     this.columns = ["ID", "PRENOM", "NOM", "TÉLÉPHONE", 'EMAIL', 'ADRESSE', 'MAGASIN', 'MANAGER'];
     this.fields = [getId, getPrenom,getNom, getTelephone, getEmail, getAdresse, getMagasin, getManager];
     this.editPath = "/employe/edit/";
+    this.entityUrl = "employe";
+    this.name = "employés";
   }
 
 }

@@ -41,17 +41,15 @@ export class AddStockComponent extends AddEntityComponent {
   }
 
   onChangeProduct(value: any) {
-    // this.entityForm.produit = {
-    //   id: value
-    // }
-    this.entityForm.stockPK.produitId = value;
+    this.entityForm.produit = {
+      id: value
+    }
   }
 
   onChangeMagasin(value: any) {
-    // this.entityForm.magasin = {
-    //   id: value
-    // }
-    this.entityForm.stockPK.magasinId = value;
+    this.entityForm.magasin = {
+      id: value
+    }
   }
 
 }

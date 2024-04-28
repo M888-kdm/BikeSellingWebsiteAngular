@@ -19,6 +19,8 @@ export class ViewCommandeComponent extends ViewEntityComponent implements OnInit
     this.columns = ["NUMERO", "DATE COMMANDE", "DATE LIVRAISON", "CLIENT", "VENDEUR", "MAGASIN"];
     this.fields = [getNumero, getDateCommande, getDateLivraison, getClient, getVendeur, getMagasinBis];
     this.editPath = "/commande/edit/";
+    this.entityUrl = "commande";
+    this.name = "commandes";
   }
 
   override ngOnInit(): void {

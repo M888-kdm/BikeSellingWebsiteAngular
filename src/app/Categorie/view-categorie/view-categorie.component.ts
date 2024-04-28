@@ -21,6 +21,8 @@ export class ViewCategorieComponent extends ViewEntityComponent implements OnIni
     this.columns = ["ID", "NOM"];
     this.fields = [getId, getNom];
     this.editPath = "/categorie/edit/";
+    this.entityUrl = "categorie"
+    this.name = "catégories";
   }
 
 }

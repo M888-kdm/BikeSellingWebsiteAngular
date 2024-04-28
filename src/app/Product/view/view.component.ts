@@ -23,6 +23,8 @@ export class ViewComponent extends ViewEntityComponent implements OnInit {
     this.columns = ["ID", "NOM", "PRIX DÉPART", "CATÉGORIE", "MARQUE"];
     this.fields = [getId, getNom, getPrixDepart, getCategorie, getMarque];
     this.editPath = "/product/edit/";
+    this.entityUrl = "product";
+    this.name = "Produits";
   }
 
 }

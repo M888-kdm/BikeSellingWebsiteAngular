@@ -19,6 +19,7 @@ export class ViewEntityComponent implements OnInit{
   fields: Function[] = [];
   entityUrl: string = "";
   editPath: string = "";
+  name: string = "";
   service: any;
 
   constructor(private router: Router, private modalService: NgbModal){

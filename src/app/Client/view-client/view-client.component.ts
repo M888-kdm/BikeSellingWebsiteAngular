@@ -19,6 +19,8 @@ export class ViewClientComponent extends ViewEntityComponent implements OnInit {
     this.columns = ["ID", "PRENOM", "NOM", "TÉLÉPHONE", 'EMAIL', 'ADRESSE'];
     this.fields = [getId, getPrenom,getNom, getTelephone, getEmail, getAdresse];
     this.editPath = "/client/edit/";
+    this.entityUrl = "client";
+    this.name = "clients";
   }
 
 }

@@ -22,9 +22,7 @@ export class EditArticleCommandeComponent extends AddArticleCommandeComponent im
 
     this.commandeId = this.route.snapshot.params['commandeId'];
     this.ligne = this.route.snapshot.params['ligne'];
-
-    console.log(this.commandeId);
-    console.log(this.ligne);
+    
   }
 
   protected override getById(): void {
@@ -33,7 +31,7 @@ export class EditArticleCommandeComponent extends AddArticleCommandeComponent im
     }, (error: any) => {
       console.log(error);
     });
-  } 
+  }
 
   override ngOnInit(): void {
 

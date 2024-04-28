@@ -19,6 +19,8 @@ export class ViewMagasinComponent extends ViewEntityComponent implements OnInit 
     this.columns = ["ID", "PRENOM", "NOM", "TÉLÉPHONE", 'EMAIL', 'ADRESSE'];
     this.fields = [getId, getPrenom,getNom, getTelephone, getEmail, getAdresse];
     this.editPath = "/magasin/edit/";
+    this.entityUrl = "magasin";
+    this.name = "magasins";
   }
 
 }

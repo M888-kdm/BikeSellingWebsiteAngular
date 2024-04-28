@@ -39,6 +39,7 @@ export class ArticleCommandeService {
   }
 
   public create(data: any): Observable<any>  {
+    console.log(data);
     return this.webApiService.put(this.articleCommandeEndpoint, data);
   }
 

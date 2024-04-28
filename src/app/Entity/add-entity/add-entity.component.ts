@@ -33,6 +33,7 @@ export class AddEntityComponent implements OnInit{
   }
 
   public PutEntity(isValid: any){
+    console.log(this.entityForm);
     this.isSubmitted = true;
     if(isValid){
       this.service.create(this.entityForm).subscribe(async (data: any) => {

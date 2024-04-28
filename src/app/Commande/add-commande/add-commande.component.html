@@ -1,10 +1,10 @@
 <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 90vh;">
     <form #magasinForm="ngForm" class="col-5">
-        <h1>Ajouter une commande...</h1>
-        <div class="from-group my-2">
+        <h1>Ajouter ou modifier une commande...</h1>
+        <!-- <div class="from-group my-2">
             <label>Numéro</label>
             <input type="text" class="form-control py-2 bg-light" placeholder="Nom du magasin..." required [(ngModel)]="entityForm.numero" name="nom" #nom="ngModel"/>
-        </div>
+        </div> -->
         <div class="from-group my-2">
             <label>Date Commande</label>
             <input type="datetime-local" class="form-control py-2 bg-light" required [(ngModel)]="entityForm.dateCommande" name="dateCommande" #dateCommande="ngModel"/>
